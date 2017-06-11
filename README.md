@@ -1,8 +1,19 @@
 # Kotlin Arguments Parser
 
-###Usage
+Scheme builds by following rule:
 
-Example:
+__typeName:argName__
+
+##Supported Types:
+
+- Boolean __(alias: bool)__
+- Integer __(alias: int)__
+- Long __(alias: long)__
+- String __(alias: text or string)__
+
+
+##Usage Example:
+
 ```kotlin
 fun main(args: Array<String>) {
     val argsParser = ArgsParser.Builder()
