@@ -26,3 +26,13 @@ fun main(args: Array<String>) {
 ```
 
 To run with passed args: __-id 1 -name alex -age 20__
+
+Output
+
+```text
+TestApplicationKt -id 1 -name alex -age 20
+id: 1
+name: alex
+age: 20
+Process finished with exit code 0
+```
