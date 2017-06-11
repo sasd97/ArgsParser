@@ -4,7 +4,7 @@ Scheme builds by following rule:
 
 __typeName:argName__
 
-##Supported Types:
+## Supported Types:
 
 - Boolean __(alias: bool)__
 - Integer __(alias: int)__
@@ -12,7 +12,7 @@ __typeName:argName__
 - String __(alias: text or string)__
 
 
-##Usage Example:
+## Usage Example:
 
 ```kotlin
 fun main(args: Array<String>) {
