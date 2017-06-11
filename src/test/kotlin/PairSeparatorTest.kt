@@ -2,8 +2,8 @@ import org.junit.Assert
 import org.junit.Test
 import xyz.javablog.sasd97.args.parser.syntax.separators.TokensPair
 import xyz.javablog.sasd97.args.parser.syntax.separators.TokensPairSeparator
-import xyz.javablog.sasd97.args.parser.syntax.separators.SeparatedPair
-import xyz.javablog.sasd97.args.parser.syntax.separators.PairSeparator
+import xyz.javablog.sasd97.args.parser.commons.separators.SeparatedPair
+import xyz.javablog.sasd97.args.parser.commons.separators.PairSeparator
 
 /**
  * Created by alexander on 11/06/2017.

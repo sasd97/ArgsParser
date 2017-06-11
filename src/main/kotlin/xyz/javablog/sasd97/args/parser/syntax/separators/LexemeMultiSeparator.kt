@@ -1,5 +1,7 @@
 package xyz.javablog.sasd97.args.parser.syntax.separators
 
+import xyz.javablog.sasd97.args.parser.commons.separators.MultiSeparator
+
 /**
  * Created by alexander on 11/06/2017.
  */

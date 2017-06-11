@@ -1,8 +1,9 @@
 package xyz.javablog.sasd97.args.parser.syntax
 
+import xyz.javablog.sasd97.args.parser.commons.Analyzer
 import xyz.javablog.sasd97.args.parser.syntax.converters.TokenConverter
-import xyz.javablog.sasd97.args.parser.syntax.separators.MultiSeparator
-import xyz.javablog.sasd97.args.parser.syntax.separators.PairSeparator
+import xyz.javablog.sasd97.args.parser.commons.separators.MultiSeparator
+import xyz.javablog.sasd97.args.parser.commons.separators.PairSeparator
 import xyz.javablog.sasd97.args.parser.syntax.tokens.TokensConfig.TYPE_TOKENS
 
 /**
@@ -12,7 +13,7 @@ import xyz.javablog.sasd97.args.parser.syntax.tokens.TokensConfig.TYPE_TOKENS
 // default scheme: type#1:key#1,type#2:key#2
 class SchemeAnalyzer(private val scheme: String,
                      private val lexemeSeparator: MultiSeparator<String, String>,
-                     private val typeKeySeparator: PairSeparator<String, String, String>) {
+                     private val typeKeySeparator: PairSeparator<String, String, String>) : Analyzer<String, TokenConverter<Any>?> {
 
     private val typeConvertersMap = mutableMapOf<String, TokenConverter<Any>>()
 
@@ -20,7 +21,9 @@ class SchemeAnalyzer(private val scheme: String,
         return typeConvertersMap[key]
     }
 
-    public fun build(): SchemeAnalyzer {
+    override fun getAnalyzed(key: String) = get(key)
+
+    override fun makeAnalyze(): SchemeAnalyzer {
         separateSchemeToTypeKeyScheme()
                 .forEach {
                     val pair = separateTypeAndKeySchemeToPair(it)

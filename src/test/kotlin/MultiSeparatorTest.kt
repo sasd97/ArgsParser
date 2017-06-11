@@ -1,7 +1,7 @@
 import org.junit.Assert
 import org.junit.Test
 import xyz.javablog.sasd97.args.parser.syntax.separators.LexemeMultiSeparator
-import xyz.javablog.sasd97.args.parser.syntax.separators.MultiSeparator
+import xyz.javablog.sasd97.args.parser.commons.separators.MultiSeparator
 
 /**
  * Created by alexander on 11/06/2017.

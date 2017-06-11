@@ -1,4 +1,4 @@
-package xyz.javablog.sasd97.args.parser.syntax.separators
+package xyz.javablog.sasd97.args.parser.commons.separators
 
 /**
  * Created by alexander on 11/06/2017.
