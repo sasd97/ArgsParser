@@ -17,7 +17,7 @@ class ArgsParserTest {
         val scheme = "bool:hello,bool:world"
         val args = arrayOf("-hello", "false", "-world", "true")
         val argsParser = ArgsParser
-                .Builder
+                .Builder()
                 .setArgs(args)
                 .setScheme(scheme)
                 .build()
@@ -36,7 +36,7 @@ class ArgsParserTest {
                 "-isScholar", "true")
 
         val argsParser = ArgsParser
-                .Builder
+                .Builder()
                 .setArgs(args)
                 .setScheme(scheme)
                 .build()

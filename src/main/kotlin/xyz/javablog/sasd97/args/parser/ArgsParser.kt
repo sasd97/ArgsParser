@@ -29,11 +29,11 @@ open class ArgsParser private constructor(builder: Builder) {
         typeKeyDelimiter = builder.typeKeyDelimiter
         commandArgumentFlag = builder.commandArgumentFlag
 
-        schemeAnalyzer = SchemeAnalyzer(scheme,
+        schemeAnalyzer = SchemeAnalyzer(builder.scheme,
                 LexemeMultiSeparator(lexemeDelimiter),
                 TokensPairSeparator(typeKeyDelimiter)).makeAnalyze()
 
-        argumentsAnalyzer = ArgumentsAnalyzer(args,
+        argumentsAnalyzer = ArgumentsAnalyzer(builder.args,
                 CommandFlagVerifier(commandArgumentFlag),
                 CommandFlagToKeyConverter(commandArgumentFlag),
                 schemeAnalyzer).makeAnalyze()
@@ -47,13 +47,13 @@ open class ArgsParser private constructor(builder: Builder) {
         return value
     }
 
-    companion object Builder {
-        private var lexemeDelimiter: String = LEXEME_DELIMITER
-        private var typeKeyDelimiter: String = TYPE_KEY_DELIMITER
-        private var commandArgumentFlag: String = COMMAND_ARGUMENT_FLAG
+    class Builder {
+        var lexemeDelimiter: String = LEXEME_DELIMITER
+        var typeKeyDelimiter: String = TYPE_KEY_DELIMITER
+        var commandArgumentFlag: String = COMMAND_ARGUMENT_FLAG
 
-        private lateinit var scheme: String
-        private lateinit var args: Array<String>
+        lateinit var scheme: String
+        lateinit var args: Array<String>
 
         public fun setLexemeDelimiter(lexemeDelimiter: String): Builder {
             this.lexemeDelimiter = lexemeDelimiter
