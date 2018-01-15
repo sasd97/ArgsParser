@@ -2,10 +2,7 @@ import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import xyz.javablog.sasd97.args.parser.ArgsParser
-import xyz.javablog.sasd97.args.parser.extensions.getBoolean
-import xyz.javablog.sasd97.args.parser.extensions.getInt
-import xyz.javablog.sasd97.args.parser.extensions.getLong
-import xyz.javablog.sasd97.args.parser.extensions.getString
+import xyz.javablog.sasd97.args.parser.extensions.*
 
 /**
  * Created by alexander on 11/06/2017.
@@ -45,5 +42,28 @@ class ArgsParserTest {
         Assert.assertEquals("alex", argsParser.getString("name"))
         Assert.assertEquals(22, argsParser.getInt("age"))
         Assert.assertEquals(true, argsParser.getBoolean("isScholar"))
+    }
+
+    @Test
+    fun ArgsParser_analyzeCustomScheme2_success() {
+        val scheme = "text:name,double:version,boolean:isFree,text:license,text:core"
+        val args = arrayOf(
+                "-name", "Yandex.Browser",
+                "-version", "2.001",
+                "-isFree", "true",
+                "-core", "blink",
+                "-license", "Proprietary software")
+
+        val argsParser = ArgsParser
+                .Builder()
+                .setArgs(args)
+                .setScheme(scheme)
+                .build()
+
+        Assert.assertEquals("Yandex.Browser", argsParser.getString("name"))
+        Assert.assertEquals(2.001, argsParser.getDouble("version"), 0.001)
+        Assert.assertEquals(true, argsParser.getBoolean("isFree"))
+        Assert.assertEquals("blink", argsParser.getString("core"))
+        Assert.assertEquals("Proprietary software", argsParser.getString("license"))
     }
 }

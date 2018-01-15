@@ -6,10 +6,11 @@ __typeName:argName__
 
 ## Supported Types:
 
-- Boolean __(alias: bool)__
-- Integer __(alias: int)__
+- Boolean __(alias: bool, boolean)__
+- Integer __(alias: int, integer)__
 - Long __(alias: long)__
-- String __(alias: text or string)__
+- Double __(alias: float, double)__
+- String __(alias: text, string)__
 
 
 ## Usage Example:

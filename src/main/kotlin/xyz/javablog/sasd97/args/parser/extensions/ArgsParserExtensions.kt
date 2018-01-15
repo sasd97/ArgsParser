@@ -10,3 +10,4 @@ fun ArgsParser.getBoolean(key: String) = this.get(key) as Boolean
 fun ArgsParser.getInt(key: String) = this.get(key) as Int
 fun ArgsParser.getLong(key: String) = this.get(key) as Long
 fun ArgsParser.getString(key: String) = this.get(key) as String
+fun ArgsParser.getDouble(key: String) = this.get(key) as Double

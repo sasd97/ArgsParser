@@ -41,7 +41,7 @@ open class ArgsParser private constructor(builder: Builder) {
 
     protected fun getKeyConverter(key: String) = schemeAnalyzer.getAnalyzed(key)
 
-    public fun get(key: String): Any {
+    fun get(key: String): Any {
         val value = argumentsAnalyzer.getAnalyzed(key)
         if (value == null) throw IllegalStateException("There is cannot be null values in map by key $key")
         return value
@@ -55,31 +55,31 @@ open class ArgsParser private constructor(builder: Builder) {
         lateinit var scheme: String
         lateinit var args: Array<String>
 
-        public fun setLexemeDelimiter(lexemeDelimiter: String): Builder {
+        fun setLexemeDelimiter(lexemeDelimiter: String): Builder {
             this.lexemeDelimiter = lexemeDelimiter
             return this
         }
 
-        public fun setTypeKeyDelimiter(typeKeyDelimiter: String): Builder {
+        fun setTypeKeyDelimiter(typeKeyDelimiter: String): Builder {
             this.typeKeyDelimiter = typeKeyDelimiter
             return this
         }
 
-        public fun setCommandArgumentFlag(commandArgumentFlag: String): Builder {
+        fun setCommandArgumentFlag(commandArgumentFlag: String): Builder {
             this.commandArgumentFlag = commandArgumentFlag
             return this
         }
 
-        public fun setScheme(scheme: String): Builder {
+        fun setScheme(scheme: String): Builder {
             this.scheme = scheme
             return this
         }
 
-        public fun setArgs(args: Array<String>): Builder {
+        fun setArgs(args: Array<String>): Builder {
             this.args = args
             return this
         }
 
-        public fun build(): ArgsParser = ArgsParser(this)
+        fun build(): ArgsParser = ArgsParser(this)
     }
 }
